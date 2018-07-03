@@ -13,6 +13,11 @@ export const User = (props) => {
                     <p>User Name: {props.username}</p>
                 </div>
             </div>
+            <div className="row">
+                <div className="col-xs-12">
+                    <p>User Name: {props.age}</p>
+                </div>
+            </div>
         </div>
     );
 }

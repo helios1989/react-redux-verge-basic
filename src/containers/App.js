@@ -3,14 +3,14 @@ import {connect} from "react-redux";
 
 import { User } from "../components/User";
 import { Main } from "../components/Main";
-import { setName } from "../actions/userActions";
+import { setName, setAge } from "../actions/userActions";
 
 class App extends React.Component {
     render() {
         return (
             <div className="container">
-                <Main changeUsername={() => this.props.setName("Anna")}/>
-                <User username={this.props.user.name}/>
+                <Main changeAge={() => this.props.setAge(33)} changeUsername={() => this.props.setName("Anna")}/>
+                <User age={this.props.user.age} username={this.props.user.name}/>
             </div>
         );
     }
@@ -27,6 +27,9 @@ const mapDispatchToProps = (dispatch) => {
     return {
         setName: (name) => {
             dispatch(setName(name));
+        },
+        setAge: (age) => {
+            dispatch(setAge(age));
         }
     };
 };
